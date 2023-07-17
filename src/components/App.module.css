@@ -1,0 +1,21 @@
+.mainDiv {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: #010101
+}
+
+.formDiv {
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+    border: 1px solid lightslategrey;
+    border-radius: 4px;
+    height: 300px;
+    width: 450px;
+}
+    

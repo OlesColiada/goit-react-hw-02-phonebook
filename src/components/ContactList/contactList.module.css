@@ -1,0 +1,43 @@
+.mainDivContactList{
+    display: flex;
+    flex-direction: column;
+}
+
+.labelInpunFindContact{
+    font-size: 27px;
+    margin-bottom: 5px;
+}
+
+.inputFindContact {
+    width: 250px;
+    height: 20px;
+    border-color: rgb(163, 160, 160);
+}
+
+.inputFindContact:hover,
+.inputFindContact:focus {
+    box-shadow: 1px 1px 20px #4c4fd4;
+    border-color: bisque;
+}
+
+.liContactList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.textContactList {
+    margin: 5px;
+}
+
+.deliteBtn {
+    width: 55px;
+    height: 30px;
+}
+
+.deliteBtn:hover,
+.deliteBtn:focus {
+    box-shadow: 1px 1px 20px #4c4fd4;
+    border: navajowhite;
+}
