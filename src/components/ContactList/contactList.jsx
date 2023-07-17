@@ -14,11 +14,13 @@ class ContactList extends Component {
     this.setState({ filter: e.target.value });
   };
 
-  deleteContact = (id) => {
-    const updatedContacts = this.props.contacts.filter(contact => contact.id !== id);
-    console.log(updatedContacts)
+  deleteContact = id => {
+    const updatedContacts = this.props.contacts.filter(
+      contact => contact.id !== id
+    );
+    console.log(updatedContacts);
     this.props.updateContacts(updatedContacts);
-  }
+  };
 
   render() {
     const { filter } = this.state;
@@ -32,7 +34,9 @@ class ContactList extends Component {
 
     return (
       <div className={styles.mainDivContactList}>
-        <label htmlFor="find Contact" className={styles.labelInpunFindContact}>Find contacts by name</label>
+        <label htmlFor="find Contact" className={styles.labelInpunFindContact}>
+          Find contacts by name
+        </label>
         <input
           type="text"
           placeholder="Search"
@@ -45,7 +49,13 @@ class ContactList extends Component {
             <li key={contact.id} className={styles.liContactList}>
               <p className={styles.textContactList}>{contact.name}:</p>
               <p className={styles.textContactList}>{contact.tel}</p>
-              <button type='button' className={styles.deliteBtn} onClick={()=>this.deleteContact(contact.id)}>Detele</button>
+              <button
+                type="button"
+                className={styles.deliteBtn}
+                onClick={() => this.deleteContact(contact.id)}
+              >
+                Detele
+              </button>
             </li>
           ))}
         </ul>
@@ -59,10 +69,10 @@ ContactList.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      tel: PropTypes.string.isRequired
+      tel: PropTypes.string.isRequired,
     })
   ).isRequired,
-  updateContacts: PropTypes.func.isRequired
+  updateContacts: PropTypes.func.isRequired,
 };
 
 export default ContactList;

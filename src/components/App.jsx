@@ -13,30 +13,25 @@ class App extends Component {
     };
   }
 
-  addContact = (newContact) => {
-    this.setState((prevState) => ({
-      contacts: [...prevState.contacts, newContact]
+  addContact = newContact => {
+    this.setState(prevState => ({
+      contacts: [...prevState.contacts, newContact],
     }));
-  }
+  };
 
-  updateContacts = (updatedContacts)=>{
-    this.setState({contacts: updatedContacts})
-  }
+  updateContacts = updatedContacts => {
+    this.setState({ contacts: updatedContacts });
+  };
 
   render() {
-    const {contacts} = this.state;
+    const { contacts } = this.state;
 
     return (
       <div className={styles.mainDiv}>
         <h2>Phonebook</h2>
-        <ContactForm 
-          contacts={contacts}
-          addContact = {this.addContact}/>
+        <ContactForm contacts={contacts} addContact={this.addContact} />
         <h3>Contacts</h3>
-        <ContactList
-          updateContacts={this.updateContacts}
-          contacts={contacts}
-          /> 
+        <ContactList updateContacts={this.updateContacts} contacts={contacts} />
       </div>
     );
   }
@@ -49,9 +44,9 @@ App.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      tel: PropTypes.string.isRequired
+      tel: PropTypes.string.isRequired,
     })
   ),
   addContact: PropTypes.func,
-  updateContacts: PropTypes.func
+  updateContacts: PropTypes.func,
 };
